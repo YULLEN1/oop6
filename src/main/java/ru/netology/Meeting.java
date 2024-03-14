@@ -5,14 +5,13 @@ public class Meeting extends Task {
     protected String project;
     protected String start;
 
-
-
-    public Meeting (int id, String topic, String project, String start ) {
-        super(id); // вызов родительского конструктора
+    public Meeting(int id, String topic, String project, String start) {
+        super(id);
         this.topic = topic;
-        this.project = project; // заполнение своих полей
+        this.project = project;
         this.start = start;
     }
+
     public String getTopic() {
         return topic;
     }
@@ -24,6 +23,7 @@ public class Meeting extends Task {
     public String getStart() {
         return start;
     }
+
     @Override
     public boolean matches(String query) {
         if (topic.contains(query)) {
