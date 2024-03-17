@@ -12,7 +12,7 @@ public class TodosTest {
     public void shouldAddThreeTasksOfDifferentType() {
         SimpleTask simpleTask = new SimpleTask(1, "Написать чек-лист");
 
-        String[] subtasks = { "Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу" };
+        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
@@ -28,7 +28,7 @@ public class TodosTest {
         todos.add(epic);
         todos.add(meeting);
 
-        Task[] expected = { simpleTask, epic, meeting };
+        Task[] expected = {simpleTask, epic, meeting};
         Task[] actual = todos.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
@@ -37,7 +37,7 @@ public class TodosTest {
     @Test
     public void shouldGetSubtasks() {
 
-        String[] subtasks = { "Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу" };
+        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
         Epic epic = new Epic(31, subtasks);
 
         String[] expected = subtasks;
@@ -49,7 +49,7 @@ public class TodosTest {
     @Test
     public void shouldGetId() {
 
-        String[] subtasks = { "Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу" };
+        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
         Epic epic = new Epic(31, subtasks);
         Task task = new Task(31);
 
@@ -63,7 +63,7 @@ public class TodosTest {
     public void shouldSearchInTodos() {
         SimpleTask simpleTask = new SimpleTask(1, "Написать чек-лист");
 
-        String[] subtasks = { "Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу" };
+        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
@@ -79,7 +79,7 @@ public class TodosTest {
         todos.add(epic);
         todos.add(meeting);
 
-        Task[] expected = { simpleTask, epic, meeting };
+        Task[] expected = {simpleTask, epic, meeting};
         Task[] actual = todos.search(" ");
 
         Assertions.assertArrayEquals(expected, actual);
@@ -89,7 +89,7 @@ public class TodosTest {
     public void shouldSearchInSimpleTaskAndEpic() {
         SimpleTask simpleTask = new SimpleTask(1, "Написать чек-лист");
 
-        String[] subtasks = { "Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу" };
+        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
@@ -105,7 +105,7 @@ public class TodosTest {
         todos.add(epic);
         todos.add(meeting);
 
-        Task[] expected = { simpleTask, epic };
+        Task[] expected = {simpleTask, epic};
         Task[] actual = todos.search(simpleTask.getTitle());
 
         Assertions.assertArrayEquals(expected, actual);
@@ -115,7 +115,7 @@ public class TodosTest {
     public void shouldSearchInMeetingAndEpic() {
         SimpleTask simpleTask = new SimpleTask(1, "Написать чек-лист");
 
-        String[] subtasks = { "Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу" };
+        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
@@ -131,7 +131,7 @@ public class TodosTest {
         todos.add(epic);
         todos.add(meeting);
 
-        Task[] expected = { epic, meeting };
+        Task[] expected = {epic, meeting};
         Task[] actual = todos.search("задач");
 
         Assertions.assertArrayEquals(expected, actual);
@@ -141,7 +141,7 @@ public class TodosTest {
     public void shouldSearchInSimpleTask() {
         SimpleTask simpleTask = new SimpleTask(1, "Написать чек-листы");
 
-        String[] subtasks = { "Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу" };
+        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
@@ -157,7 +157,7 @@ public class TodosTest {
         todos.add(epic);
         todos.add(meeting);
 
-        Task[] expected = { simpleTask };
+        Task[] expected = {simpleTask};
         Task[] actual = todos.search("чек-листы");
 
         Assertions.assertArrayEquals(expected, actual);
@@ -167,7 +167,7 @@ public class TodosTest {
     public void shouldSearchInEpic() {
         SimpleTask simpleTask = new SimpleTask(1, "Написать чек-лист");
 
-        String[] subtasks = { "Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу" };
+        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
@@ -183,7 +183,7 @@ public class TodosTest {
         todos.add(epic);
         todos.add(meeting);
 
-        Task[] expected = { epic };
+        Task[] expected = {epic};
         Task[] actual = todos.search("дефект");
 
         Assertions.assertArrayEquals(expected, actual);
@@ -193,7 +193,7 @@ public class TodosTest {
     public void shouldSearchInMeetingFirst() {
         SimpleTask simpleTask = new SimpleTask(1, "Написать чек-лист");
 
-        String[] subtasks = { "Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу" };
+        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
@@ -209,7 +209,7 @@ public class TodosTest {
         todos.add(epic);
         todos.add(meeting);
 
-        Task[] expected = { meeting };
+        Task[] expected = {meeting};
         Task[] actual = todos.search(meeting.getTopic());
 
         Assertions.assertArrayEquals(expected, actual);
@@ -219,7 +219,7 @@ public class TodosTest {
     public void shouldSearchInMeetingSecond() {
         SimpleTask simpleTask = new SimpleTask(1, "Написать чек-лист");
 
-        String[] subtasks = { "Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу" };
+        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
@@ -235,7 +235,7 @@ public class TodosTest {
         todos.add(epic);
         todos.add(meeting);
 
-        Task[] expected = { meeting };
+        Task[] expected = {meeting};
         Task[] actual = todos.search(meeting.getProject());
 
         Assertions.assertArrayEquals(expected, actual);
@@ -245,7 +245,7 @@ public class TodosTest {
     public void shouldSearchInMeetingThird() {
         SimpleTask simpleTask = new SimpleTask(1, "Написать чек-лист");
 
-        String[] subtasks = { "Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу" };
+        String[] subtasks = {"Написать чек-лист", "Найти дефект", "Завести баг-репорт", "Отправить баг-репорт", "Закрыть задачу"};
         Epic epic = new Epic(31, subtasks);
 
         Meeting meeting = new Meeting(
